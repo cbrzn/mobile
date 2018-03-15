@@ -2,64 +2,105 @@ import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, View } from 'react-native';
 
 export default class ButtonBasics extends Component {
+  //CALLING RAILS API:
+
+  // _onPressUp() {
+  //   return fetch(`http://192.168.1.2:3000/todos?title=up`, {
+  //     method: 'POST',
+  //        headers: {
+  //          Accept: 'application/json',
+  //          'Content-Type': 'application/json',
+  //        },
+  //      }).then((data) => data.json())
+  //             .then((dataJSON) => {
+  //               console.log(dataJSON);
+  //           }).catch((error) => {
+  //             console.log(error)
+  //           })
+  //   }
+  // _onPressDown() {
+  //   return fetch(`http://192.168.1.2:3000/todos?title=down`, {
+  //     method: 'POST',
+  //        headers: {
+  //          Accept: 'application/json',
+  //          'Content-Type': 'application/json',
+  //        },
+  //      }).then((data) => data.json())
+  //             .then((dataJSON) => {
+  //               console.log(dataJSON);
+  //           }).catch((error) => {
+  //             console.log(error)
+  //           })
+  //   }
+  //
+  // _onPressLeft() {
+  //   return fetch(`http://192.168.1.2:3000/todos?title=left`, {
+  //     method: 'POST',
+  //        headers: {
+  //          Accept: 'application/json',
+  //          'Content-Type': 'application/json',
+  //        },
+  //      }).then((data) => data.json())
+  //             .then((dataJSON) => {
+  //               console.log(dataJSON);
+  //           }).catch((error) => {
+  //             console.log(error)
+  //           })
+  //   }
+  //
+  // _onPressRight() {
+  //   return fetch(`http://192.168.1.2:3000/todos?title=right`, {
+  //     method: 'POST',
+  //        headers: {
+  //          Accept: 'application/json',
+  //          'Content-Type': 'application/json',
+  //        },
+  //      }).then((data) => data.json())
+  //             .then((dataJSON) => {
+  //               console.log(dataJSON);
+  //           }).catch((error) => {
+  //             console.log(error)
+  //           })
+  //   }
+
+
+  //CALLING EXPRESS API:
+
   _onPressUp() {
-    return fetch(`http://192.168.1.2:3000/todos?title=up`, {
-      method: 'POST',
-         headers: {
-           Accept: 'application/json',
-           'Content-Type': 'application/json',
-         },
-       }).then((data) => data.json())
+    return fetch(`http://192.168.1.2:3010/send_command/up`).then((data) => data.json())
               .then((dataJSON) => {
                 console.log(dataJSON);
             }).catch((error) => {
-              console.log(error)
+                console.log(error)
             })
     }
   _onPressDown() {
-    return fetch(`http://192.168.1.2:3000/todos?title=down`, {
-      method: 'POST',
-         headers: {
-           Accept: 'application/json',
-           'Content-Type': 'application/json',
-         },
-       }).then((data) => data.json())
+    return fetch(`http://192.168.1.2:3010/send_command/down`).then((data) => data.json())
               .then((dataJSON) => {
                 console.log(dataJSON);
             }).catch((error) => {
-              console.log(error)
+                console.log(error)
             })
     }
 
   _onPressLeft() {
-    return fetch(`http://192.168.1.2:3000/todos?title=left`, {
-      method: 'POST',
-         headers: {
-           Accept: 'application/json',
-           'Content-Type': 'application/json',
-         },
-       }).then((data) => data.json())
+    return fetch(`http://192.168.1.2:3010/send_command/left`).then((data) => data.json())
               .then((dataJSON) => {
                 console.log(dataJSON);
             }).catch((error) => {
-              console.log(error)
+                console.log(error)
             })
     }
 
   _onPressRight() {
-    return fetch(`http://192.168.1.2:3000/todos?title=right`, {
-      method: 'POST',
-         headers: {
-           Accept: 'application/json',
-           'Content-Type': 'application/json',
-         },
-       }).then((data) => data.json())
+    return fetch(`http://192.168.1.2:3010/send_command/right`).then((data) => data.json())
               .then((dataJSON) => {
                 console.log(dataJSON);
             }).catch((error) => {
-              console.log(error)
+                console.log(error)
             })
     }
+
 
   render() {
     return (
